@@ -1,4 +1,6 @@
-# MELting Universe – Ice Cream Shop & Browser Test Suite
+# MELting Universe – Ice Cream E-Commerce Website & Browser Test Suite
+
+🍦 Ice cream e-commerce website with interactive cart, seamless single-page checkout, and Playwright automation testing.
 
 **Event / Challenge:** Fynd Hiring Hackathon (SDET Intern)  
 **Role:** Senior Full-Stack Developer, UI/UX Designer & QA Automation Architect  
