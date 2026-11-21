@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream Menu - MELting Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cart.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand-wrapper">
+      <img src="./img3.jpg" alt="MELting Universe Logo" class="brand-logo">
+      <div class="brand-info">
+        <span class="brand-name">MELting Universe</span>
+        <span class="brand-subtext">Ice Cream Shop</span>
+      </div>
+    </a>
+
+    <nav class="nav-left" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="checkout.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <span id="nav-user-greeting" class="hidden" style="font-size: 13px; font-weight: 600; color: var(--color-primary);"></span>
+      <a href="checkout.html" class="cart-pill" aria-label="View Cart and Checkout">
+        <span>🛒 Cart</span>
+        <span class="badge" id="header-cart-count">0</span>
+      </a>
+      <a href="checkout.html" class="btn-nav">Order Now</a>
+    </div>
+  </header>
+
+  <!-- Page Header Banner -->
+  <div class="page-wrapper">
+    <div class="page-header-banner">
+      <h1>Our Ice Cream Menu</h1>
+      <p>" Keep It Cool · Scoop the Chill "</p>
+    </div>
+
+    <main class="menu-main-content">
+
+      <!-- CATEGORY 1: Cup Ice Creams -->
+      <section aria-labelledby="cat-cups">
+        <div class="category-banner" id="cat-cups">1. Cup Ice Creams</div>
+        <div class="menu-grid">
+          
+          <!-- Chocolate Cup -->
+          <article class="menu-card" id="product-chocolate-cup">
+            <img src="./Photos/c3.jpg" alt="Chocolate Cup Ice Cream" class="menu-card-img">
+            <h3 class="menu-card-title">Chocolate</h3>
+            <span class="menu-card-price">₹50</span>
+            <p class="menu-card-desc">Rich and creamy cocoa delight.</p>
+            <button 
+              type="button" 
+              class="btn-add-menu add-to-cart-btn" 
+              data-id="chocolate-cup" 
+              data-name="Chocolate" 
+              data-price="50" 
+              data-img="./Photos/c3.jpg"
+              aria-label="Add Chocolate to cart"
+            >
+              Add to Cart
+            </button>
+          </article>
+
+          <!-- Vanilla Cup -->
+          <article class="menu-card" id="product-vanilla-cup">
+            <img src="./Photos/c4.jpg" alt="Vanilla Cup Ice Cream" class="menu-card-img">
+            <h3 class="menu-card-title">Vanilla</h3>
+            <span class="menu-card-price">₹40</span>
+            <p class="menu-card-desc">Smooth classic goodness.</p>
+            <button 
+              type="button" 
+              class="btn-add-menu add-to-cart-btn" 
+              data-id="vanilla-cup" 
+              data-name="Vanilla" 
+              data-price="40" 
+              data-img="./Photos/c4.jpg"
+              aria-label="Add Vanilla to cart"
+            >
+              Add to Cart
+            </button>
+          </article>
+
+          <!-- Strawberry Cup -->
+          <article class="menu-card" id="product-strawberry-cup">
+            <img src="./Photos/c2.jpg" alt="Strawberry Cup Ice Cream" class="menu-card-img">
+            <h3 class="menu-card-title">Strawberry</h3>
+            <span class="menu-card-price">₹40</span>
+            <p class="menu-card-desc">Juicy strawberry flavor burst.</p>
+            <button 
+              type="button" 
+              class="btn-add-menu add-to-cart-btn" 
+              data-id="strawberry-cup" 
+              data-name="Strawberry" 
+              data-price="40" 
+              data-img="./Photos/c2.jpg"
+              aria-label="Add Strawberry to cart"
+            >
+              Add to Cart
+            </button>
+          </article>
+
+          <!-- Mixed Flavours Cup -->
+          <article class="menu-card" id="product-mixed-cup">
+            <img src="./Photos/c1.jpg" alt="Mixed Flavours Cup Ice Cream" class="menu-card-img">
+            <h3 class="menu-card-title">Mixed Flavours</h3>
+            <span class="menu-card-price">₹60</span>
+            <p class="menu-card-desc">A colorful swirl of surprises.</p>
+            <button 
+              type="button" 
+              class="btn-add-menu add-to-cart-btn" 
+              data-id="mixed-cup" 
+              data-name="Mixed Flavours" 
+              data-price="60" 
+              data-img="./Photos/c1.jpg"
+              aria-label="Add Mixed Flavours to cart"
+            >
+              Add to Cart
+            </button>
+          </article>
+
+          <!-- Blueberry Cup -->
+          <article class="menu-card" id="product-blueberry-cup">
+            <img src="./Photos/c5.jpg" alt="Blueberry Cup Ice Cream" class="menu-card-img">
+            <h3 class="menu-card-title">Blueberry</h3>
+            <span class="menu-card-price">₹35</span>
+            <p class="menu-card-desc">Tangy berry chill-out scoop.</p>
+            <button 
+              type="button" 
+              class="btn-add-menu add-to-cart-btn" 
+              data-id="blueberry-cup" 
+              data-name="Blueberry" 
+              data-price="35" 
+              data-img="./Photos/c5.jpg"
+              aria-label="Add Blueberry to cart"
+            >
+              Add to Cart
+            </button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY 2: Stick Ice Cream -->
+      <section aria-labelledby="cat-sticks">
+        <div class="category-banner" id="cat-sticks">2. Stick Ice Creams</div>
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <img src="./Photos/s3.jpg" alt="Jolly train Blueberry" class="menu-card-img">
+            <h3 class="menu-card-title">Jolly train - Blueberry</h3>
+            <span class="menu-card-price">₹30</span>
+            <p class="menu-card-desc">Blueberry fun on a stick.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="stick-jolly-blue" data-name="Jolly train - Blueberry" data-price="30" data-img="./Photos/s3.jpg" aria-label="Add Jolly train Blueberry to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/s1.jpg" alt="Little heart Strawberry" class="menu-card-img">
+            <h3 class="menu-card-title">Little heart - Strawberry</h3>
+            <span class="menu-card-price">₹35</span>
+            <p class="menu-card-desc">Creamy heart-shaped bliss.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="stick-heart-straw" data-name="Little heart - Strawberry" data-price="35" data-img="./Photos/s1.jpg" aria-label="Add Little heart Strawberry to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/s2.jpg" alt="Chocolate Stick" class="menu-card-img">
+            <h3 class="menu-card-title">Chocolate</h3>
+            <span class="menu-card-price">₹40</span>
+            <p class="menu-card-desc">Classic choco indulgence.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="stick-choco" data-name="Chocolate Stick" data-price="40" data-img="./Photos/s2.jpg" aria-label="Add Chocolate Stick to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/s5.jpg" alt="Little heart Choco" class="menu-card-img">
+            <h3 class="menu-card-title">Little heart - Choco</h3>
+            <span class="menu-card-price">₹35</span>
+            <p class="menu-card-desc">Choco-berry dreamy combo.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="stick-heart-choco" data-name="Little heart - Choco" data-price="35" data-img="./Photos/s5.jpg" aria-label="Add Little heart Choco to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/s4.jpg" alt="Jolly train Chocolate" class="menu-card-img">
+            <h3 class="menu-card-title">Jolly train - Chocolate</h3>
+            <span class="menu-card-price">₹30</span>
+            <p class="menu-card-desc">Hop on the choco train!</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="stick-jolly-choco" data-name="Jolly train - Chocolate" data-price="30" data-img="./Photos/s4.jpg" aria-label="Add Jolly train Chocolate to cart">Add to Cart</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY 3: Tubs Ice Cream -->
+      <section aria-labelledby="cat-tubs">
+        <div class="category-banner" id="cat-tubs">3. Tub Ice Creams</div>
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <img src="./Photos/t1.jpg" alt="Chocolate Tub" class="menu-card-img">
+            <h3 class="menu-card-title">Chocolate Tub</h3>
+            <span class="menu-card-price">₹240</span>
+            <p class="menu-card-desc">A tub of deep chocolate joy.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="tub-choco" data-name="Chocolate Tub" data-price="240" data-img="./Photos/t1.jpg" aria-label="Add Chocolate Tub to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/t3.jpg" alt="BlackCurrent Tub" class="menu-card-img">
+            <h3 class="menu-card-title">BlackCurrent Tub</h3>
+            <span class="menu-card-price">₹260</span>
+            <p class="menu-card-desc">Purple, tart, and magical.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="tub-blackcurrent" data-name="BlackCurrent Tub" data-price="260" data-img="./Photos/t3.jpg" aria-label="Add BlackCurrent Tub to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/t4.jpg" alt="Red Velvet Tub" class="menu-card-img">
+            <h3 class="menu-card-title">Red Velvet Tub</h3>
+            <span class="menu-card-price">₹280</span>
+            <p class="menu-card-desc">Velvety cake + cream = wow!</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="tub-red-velvet" data-name="Red Velvet Tub" data-price="280" data-img="./Photos/t4.jpg" aria-label="Add Red Velvet Tub to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/t5.jpg" alt="Butterscotch Tub" class="menu-card-img">
+            <h3 class="menu-card-title">Butterscotch Tub</h3>
+            <span class="menu-card-price">₹260</span>
+            <p class="menu-card-desc">Golden, nutty butter love.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="tub-butterscotch" data-name="Butterscotch Tub" data-price="260" data-img="./Photos/t5.jpg" aria-label="Add Butterscotch Tub to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/t2.jpg" alt="Vanilla Tub" class="menu-card-img">
+            <h3 class="menu-card-title">Vanilla Tub</h3>
+            <span class="menu-card-price">₹250</span>
+            <p class="menu-card-desc">Scoops of silky vanilla.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="tub-vanilla" data-name="Vanilla Tub" data-price="250" data-img="./Photos/t2.jpg" aria-label="Add Vanilla Tub to cart">Add to Cart</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY 4: Ice Cream Cakes -->
+      <section aria-labelledby="cat-cakes">
+        <div class="category-banner" id="cat-cakes">4. Ice Cream Cakes</div>
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <img src="./Photos/cc1.jpg" alt="Butterscotch Cake" class="menu-card-img">
+            <h3 class="menu-card-title">Butterscotch Cake</h3>
+            <span class="menu-card-price">₹450</span>
+            <p class="menu-card-desc">Caramel nutty dreams.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="cake-butterscotch" data-name="Butterscotch Cake" data-price="450" data-img="./Photos/cc1.jpg" aria-label="Add Butterscotch Cake to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/cc2.jpg" alt="Red Velvet Cake" class="menu-card-img">
+            <h3 class="menu-card-title">Red Velvet Cake</h3>
+            <span class="menu-card-price">₹460</span>
+            <p class="menu-card-desc">Romantic red &amp; creamy white.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="cake-red-velvet" data-name="Red Velvet Cake" data-price="460" data-img="./Photos/cc2.jpg" aria-label="Add Red Velvet Cake to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/cc3.jpg" alt="Fruit & BlackCurrent Cake" class="menu-card-img">
+            <h3 class="menu-card-title">Fruit &amp; BlackCurrent</h3>
+            <span class="menu-card-price">₹500</span>
+            <p class="menu-card-desc">Royal fruity delight.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="cake-fruit-blackcurrent" data-name="Fruit & BlackCurrent Cake" data-price="500" data-img="./Photos/cc3.jpg" aria-label="Add Fruit & BlackCurrent Cake to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/cc4.jpg" alt="Strawberry Cake" class="menu-card-img">
+            <h3 class="menu-card-title">Strawberry Cake</h3>
+            <span class="menu-card-price">₹440</span>
+            <p class="menu-card-desc">Berries &amp; cream together.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="cake-strawberry" data-name="Strawberry Cake" data-price="440" data-img="./Photos/cc4.jpg" aria-label="Add Strawberry Cake to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/cc5.jpg" alt="Dark Choco Cake" class="menu-card-img">
+            <h3 class="menu-card-title">Dark Choco Cake</h3>
+            <span class="menu-card-price">₹575</span>
+            <p class="menu-card-desc">Dark, rich, irresistible.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="cake-dark-choco" data-name="Dark Choco Cake" data-price="575" data-img="./Photos/cc5.jpg" aria-label="Add Dark Choco Cake to cart">Add to Cart</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY 5: Bytes -->
+      <section aria-labelledby="cat-bytes">
+        <div class="category-banner" id="cat-bytes">5. Bytes</div>
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <img src="./Photos/b1.jpg" alt="Strawberry Choco Bytes" class="menu-card-img">
+            <h3 class="menu-card-title">Strawberry Choco</h3>
+            <span class="menu-card-price">₹15</span>
+            <p class="menu-card-desc">Berry-choco delight bits.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="bytes-strawberry-choco" data-name="Strawberry Choco Bytes" data-price="15" data-img="./Photos/b1.jpg" aria-label="Add Strawberry Choco Bytes to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/b2.jpg" alt="Cotton Candy Bytes" class="menu-card-img">
+            <h3 class="menu-card-title">Cotton Candy</h3>
+            <span class="menu-card-price">₹5</span>
+            <p class="menu-card-desc">Sweet cloud nostalgia.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="bytes-cotton-candy" data-name="Cotton Candy Bytes" data-price="5" data-img="./Photos/b2.jpg" aria-label="Add Cotton Candy Bytes to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/b3.jpg" alt="Little Heart Bytes" class="menu-card-img">
+            <h3 class="menu-card-title">Little Heart</h3>
+            <span class="menu-card-price">₹10</span>
+            <p class="menu-card-desc">Tiny creamy cuteness.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="bytes-little-heart" data-name="Little Heart Bytes" data-price="10" data-img="./Photos/b3.jpg" aria-label="Add Little Heart Bytes to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/b4.jpg" alt="Choco Bytes" class="menu-card-img">
+            <h3 class="menu-card-title">Choco Bytes</h3>
+            <span class="menu-card-price">₹5</span>
+            <p class="menu-card-desc">Crunchy choco bombs.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="bytes-choco" data-name="Choco Bytes" data-price="5" data-img="./Photos/b4.jpg" aria-label="Add Choco Bytes to cart">Add to Cart</button>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Photos/b5.jpg" alt="Vanilla Choco Bytes" class="menu-card-img">
+            <h3 class="menu-card-title">Vanilla Choco</h3>
+            <span class="menu-card-price">₹15</span>
+            <p class="menu-card-desc">Classic combo in bites.</p>
+            <button type="button" class="btn-add-menu add-to-cart-btn" data-id="bytes-vanilla-choco" data-name="Vanilla Choco Bytes" data-price="15" data-img="./Photos/b5.jpg" aria-label="Add Vanilla Choco Bytes to cart">Add to Cart</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Bottom Call To Action: ORDER HERE Directly Moves to Cart/Checkout -->
+      <div style="text-align: center; margin: 55px 0 35px;">
+        <a href="checkout.html" class="btn-order-now" style="font-size: 20px; padding: 16px 42px; text-decoration: none;">
+          ORDER HERE 🛒
+        </a>
+        <p style="font-size: 14px; color: var(--color-text-muted); margin-top: 10px;">
+          Proceed directly to the single-page checkout to review your cart and place your order.
+        </p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Floating Sticky Cart & Order Now Bar -->
+  <aside id="floating-cart-bar" class="floating-cart-bar hidden" aria-label="Cart Overview">
+    <div class="floating-cart-summary">
+      <span>🛒 <strong id="floating-cart-count">0 items</strong> in your cart</span>
+      <span>•</span>
+      <span>Subtotal: <strong id="floating-cart-total" class="floating-cart-total">₹0</strong></span>
+    </div>
+    <a href="checkout.html" class="btn-order-now" id="view-cart-checkout-btn">
+      VIEW CART &amp; CHECKOUT →
+    </a>
+  </aside>
+
+  <footer class="site-footer">
+    &copy; 2026 MELting Universe. All rights reserved. Ice Cream Shop &amp; Mini Checkout.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add to cart buttons listener
+      const addBtns = document.querySelectorAll('.add-to-cart-btn');
+      addBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget;
+          const id = target.getAttribute('data-id');
+          const name = target.getAttribute('data-name');
+          const price = target.getAttribute('data-price');
+          const img = target.getAttribute('data-img');
+
+          addItemToCart(id, name, price, img);
+
+          // Brief button feedback
+          const originalText = target.textContent;
+          target.textContent = '✓ Added!';
+          target.style.backgroundColor = 'var(--color-success)';
+
+          setTimeout(() => {
+            target.textContent = originalText;
+            target.style.backgroundColor = '';
+          }, 800);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

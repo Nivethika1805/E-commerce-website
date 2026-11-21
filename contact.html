@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MELting Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cart.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand-wrapper">
+      <img src="./img3.jpg" alt="MELting Universe Logo" class="brand-logo">
+      <div class="brand-info">
+        <span class="brand-name">MELting Universe</span>
+        <span class="brand-subtext">Ice Cream Shop</span>
+      </div>
+    </a>
+
+    <nav class="nav-left" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="checkout.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="checkout.html" class="cart-pill" aria-label="View Shopping Cart">
+        <span>🛒 Cart</span>
+        <span class="badge" id="header-cart-count">0</span>
+      </a>
+      <a href="menu.html" class="btn-nav">Explore Menu</a>
+    </div>
+  </header>
+
+  <div class="page-wrapper">
+    <div class="page-header-banner">
+      <h1>Contact Us</h1>
+      <p>Have a question or special party order request? Send us a message!</p>
+    </div>
+
+    <main class="contact-container">
+      <div class="contact-card-wrapper">
+        <div style="text-align: center; margin-bottom: 24px; padding: 14px; background: #e0f7fa; border-radius: 12px; border: 1px solid #b2ebf2;">
+          <p style="margin: 0 0 10px; font-weight: 600; color: #006064;">Ready to order your ice creams online now?</p>
+          <a href="checkout.html" class="btn-order-now" style="display: inline-block; padding: 10px 26px; font-size: 15px; text-decoration: none;">
+            ORDER HERE 🛒
+          </a>
+        </div>
+
+        <div id="contact-alert" class="alerts-container" role="alert" aria-live="polite"></div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Your Name <span style="color: var(--color-danger);">*</span></label>
+            <input 
+              type="text" 
+              id="contact-name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Enter Your Name" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address <span style="color: var(--color-danger);">*</span></label>
+            <input 
+              type="email" 
+              id="contact-email" 
+              name="email" 
+              class="form-input" 
+              placeholder="Enter Your Mail ID" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-number">Phone Number <span style="color: var(--color-danger);">*</span></label>
+            <input 
+              type="tel" 
+              id="contact-number" 
+              name="number" 
+              class="form-input" 
+              placeholder="Enter Your Number" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Your Order / Message <span style="color: var(--color-danger);">*</span></label>
+            <textarea 
+              id="contact-message" 
+              name="message" 
+              placeholder="List your favorite ice creams, flavors, quantity, or any custom requests..." 
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" id="contact-submit-btn" class="btn-primary-block">
+            Send Message ✉️
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    &copy; 2026 MELting Universe. All rights reserved. Ice Cream Shop &amp; Mini Checkout.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contact-form');
+      const contactAlert = document.getElementById('contact-alert');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const number = document.getElementById('contact-number').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        if (!name || !email || !number || !message) {
+          contactAlert.innerHTML = `
+            <div class="alert-message alert-danger">
+              Please fill in all required fields before sending.
+            </div>
+          `;
+          return;
+        }
+
+        contactAlert.innerHTML = `
+          <div class="alert-message alert-success">
+            Thank you, ${name}! Your message has been received. We will get back to you shortly.
+          </div>
+        `;
+        contactForm.reset();
+      });
+    });
+  </script>
+</body>
+</html>

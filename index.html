@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Melting Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand-wrapper">
+      <img src="./img3.jpg" alt="Melting Universe Logo" class="brand-logo">
+      <div class="brand-info">
+        <span class="brand-name">MELTING UNIVERSE</span>
+        <span class="brand-subtext">Ice Cream Shop</span>
+      </div>
+    </a>
+
+    <nav class="nav-left" aria-label="Main Navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="checkout.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="checkout.html" class="cart-pill" aria-label="View Shopping Cart">
+        <span>🛒 Cart</span>
+        <span class="badge" id="header-cart-count">0</span>
+      </a>
+      <a href="menu.html" class="btn-nav">Explore Menu</a>
+    </div>
+  </header>
+
+  <!-- Main Login Experience -->
+  <div class="page-wrapper">
+    <div class="page-header-banner">
+      <p style="font-size: 18px; color: #007B8F; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 6px;">
+        " Born to CHILL , Built to MELT "
+      </p>
+      <h1>Welcome to Melting Universe</h1>
+      <p>Please log in to browse our delicious handcrafted ice creams and place an order.</p>
+    </div>
+
+    <main class="login-container">
+      <div class="login-header">
+        <h2>Customer Login</h2>
+        <p>Frontend Demonstration • Quick Access</p>
+      </div>
+
+      <!-- Alert Box -->
+      <div id="login-alert" class="alerts-container" role="alert" aria-live="polite"></div>
+
+      <!-- Active Login Form -->
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username or Email <span style="color: var(--color-danger);">*</span></label>
+          <input type="text" id="username" name="username" class="form-input"
+            placeholder="Enter username or email (e.g. admin)" autocomplete="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span style="color: var(--color-danger);">*</span></label>
+          <input type="password" id="password" name="password" class="form-input"
+            placeholder="Enter password (e.g. 123456)" autocomplete="current-password" required />
+        </div>
+
+        <button type="submit" id="login-btn" class="btn-primary-block">
+          Login to Order 🍨
+        </button>
+      </form>
+
+      <div class="demo-login-box">
+        🍦 <strong>Demo Account:</strong> <code>admin</code> | <strong>Password:</strong> <code>123456</code><br>
+        <em>(Frontend demo: You can also use any username and password to proceed)</em>
+      </div>
+
+      <!-- Logged In State Display -->
+      <div id="already-logged-in" class="hidden" style="text-align: center; margin-top: 15px;">
+        <p style="font-size: 15px; margin-bottom: 15px; color: var(--color-primary); font-weight: 600;">
+          Currently signed in as: <strong id="logged-user-name"></strong>
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <a href="menu.html" class="btn-nav" style="flex: 1; text-align: center; justify-content: center;">Go to Menu
+            →</a>
+          <button type="button" id="session-logout-btn" class="btn-nav-logout">Log Out</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    &copy; 2026 MELting Universe. All rights reserved. Ice Cream Shop &amp; Mini Checkout.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('login-form');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const alertBox = document.getElementById('login-alert');
+      const alreadyLoggedInBox = document.getElementById('already-logged-in');
+      const loggedUserName = document.getElementById('logged-user-name');
+      const sessionLogoutBtn = document.getElementById('session-logout-btn');
+
+      function showAlert(message, type = 'danger') {
+        alertBox.innerHTML = `
+          <div class="alert-message alert-${type}">
+            <span>${message}</span>
+          </div>
+        `;
+      }
+
+      function clearAlert() {
+        alertBox.innerHTML = '';
+      }
+
+      // Check existing session
+      const currentUser = getLoggedInUser();
+      if (currentUser) {
+        alreadyLoggedInBox.classList.remove('hidden');
+        loggedUserName.textContent = currentUser;
+      }
+
+      if (sessionLogoutBtn) {
+        sessionLogoutBtn.addEventListener('click', () => {
+          logoutUser();
+          alreadyLoggedInBox.classList.add('hidden');
+          showAlert('Logged out successfully.', 'success');
+        });
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        clearAlert();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!username) {
+          showAlert('Please enter your username or email.');
+          usernameInput.setAttribute('aria-invalid', 'true');
+          usernameInput.focus();
+          return;
+        }
+
+        if (!password) {
+          showAlert('Please enter your password.');
+          passwordInput.setAttribute('aria-invalid', 'true');
+          passwordInput.focus();
+          return;
+        }
+
+        // Save demo session
+        setLoggedInUser(username);
+        showAlert(`🎉 Welcome, ${username}! Redirecting to menu...`, 'success');
+
+        setTimeout(() => {
+          window.location.href = 'menu.html';
+        }, 600);
+      });
+
+      usernameInput.addEventListener('input', () => {
+        usernameInput.removeAttribute('aria-invalid');
+      });
+      passwordInput.addEventListener('input', () => {
+        passwordInput.removeAttribute('aria-invalid');
+      });
+    });
+  </script>
+</body>
+
+</html>
